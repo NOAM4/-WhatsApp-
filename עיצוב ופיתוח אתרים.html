@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	           <meta charset="utf-8" />
+	           <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="he">
+<head>
+	           <meta charset="UTF-8" />
+	           <meta name="viewport" content="width=device-width, initial-scale=1" />
+	           <title>דף נחיתה - הרשמה</title>
+	           <style>
+		           /* עיצוב כללי */
+		           * {
+			box-sizing: border-box;
+			font-family: 'Arial', sans-serif;
+			margin: 0;
+			padding: 0;
+		           }
+
+		           body {
+			background: linear-gradient(135deg, #6a11cb, #2575fc);
+			color: #fff;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 20px;
+		           }
+
+		           .container {
+			background: rgba(0, 0, 0, 0.7);
+			padding: 40px;
+			border-radius: 12px;
+			max-width: 400px;
+			width: 100%;
+			box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+			text-align: center;
+		           }
+
+		           h1 {
+			margin-bottom: 20px;
+			font-weight: 700;
+			font-size: 2rem;
+			letter-spacing: 1px;
+		           }
+
+		           p.subtitle {
+			margin-bottom: 30px;
+			font-size: 1.1rem;
+			color: #d0d0d0;
+		           }
+
+		           form {
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+		           }
+
+		           input[type="text"],
+		           input[type="email"],
+		           input[type="tel"] {
+			padding: 12px 15px;
+			border-radius: 8px;
+			border: none;
+			font-size: 1rem;
+			outline: none;
+			transition: background-color 0.3s ease;
+		           }
+
+			input[type="text"]:focus,
+			input[type="email"]:focus,
+			input[type="tel"]:focus {
+				background-color: #fff;
+				color: #000;
+			}
+
+		           button {
+			padding: 15px;
+			border: none;
+			border-radius: 8px;
+			background: #2575fc;
+			font-size: 1.1rem;
+			color: #fff;
+			font-weight: 700;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+			user-select: none;
+		           }
+
+			button:hover {
+				background: #1a52d1;
+			}
+
+		           .footer {
+			margin-top: 25px;
+			font-size: 0.9rem;
+			color: #bbb;
+		           }
+
+		           /* רספונסיב */
+		           @media (max-width: 450px) {
+			.container {
+				padding: 30px 20px;
+			}
+		           }
+	           </style>
+</head>
+<body>
+	           <div class="container">
+		                      <h1>ברוכים הבאים!</h1>
+		                      <p class="subtitle">הירשמו עכשיו לקבלת עדכונים מיוחדים</p>
+		                      <form id="signup-form">
+				          <input type="text" name="name" placeholder="שם מלא" required />
+				          <input type="email" name="email" placeholder="אימייל" required />
+				          <input type="tel" name="phone" placeholder="טלפון (אופציונלי)" />
+				          <button type="submit">הירשם</button>
+		                      </form>
+		                      <div class="footer">
+				          &copy; 2025 כל הזכויות שמורות
+		                      </div>
+	           </div>
+
+	           <script>
+    // טיפול בשליחת הטופס
+    const form = document.getElementById('signup-form');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const name = formData.get('name');
+      const email = formData.get('email');
+
+      // כאן אפשר להוסיף שליחה לשרת או תהליך אחר
+      alert(`תודה ${name}! הרשמתך התקבלה.\nנשלח אליך אימייל ל-${email}`);
+
+      form.reset();
+    });
+	           </script>
+</body>
+</html>
